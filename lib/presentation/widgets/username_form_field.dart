@@ -11,6 +11,7 @@ class UserNameFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: userNameController,
       onChanged: (value) {
         return;
       },

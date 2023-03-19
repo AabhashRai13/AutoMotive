@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:auto_motive/presentation/resources/color_manager.dart';
+import 'package:auto_motive/presentation/resources/routes_manager.dart';
 import 'package:auto_motive/presentation/resources/size_config.dart';
 import 'package:auto_motive/presentation/widgets/default_button.dart';
 import 'package:auto_motive/presentation/widgets/password_form_field.dart';
@@ -12,6 +15,7 @@ class LoginForm extends StatelessWidget {
   final formKey = GlobalKey<FormState>();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController usernameController = TextEditingController();
+  final TextEditingController numberEditingController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +24,7 @@ class LoginForm extends StatelessWidget {
       child: Column(
         children: [
           UserNameFormField(
-            userNameController: usernameController,
+            userNameController: numberEditingController,
           ),
           SizedBox(height: getProportionateScreenHeight(30)),
           PasswordFormField(
@@ -37,8 +41,7 @@ class LoginForm extends StatelessWidget {
               const Text(AppStrings.rememberMe),
               const Spacer(),
               GestureDetector(
-                onTap: () {
-                },
+                onTap: () {},
                 child: const Text(
                   AppStrings.forgotPassword,
                   style: TextStyle(decoration: TextDecoration.underline),
@@ -55,7 +58,11 @@ class LoginForm extends StatelessWidget {
           // :
           DefaultButton(
             text: AppStrings.loginText,
-            press: () {},
+            press: () {
+              log("numbr ${numberEditingController.text.trim()}");
+              Navigator.pushNamed(context, Routes.otpScreen,
+                  arguments: int.parse(numberEditingController.text.trim()));
+            },
           ),
         ],
       ),

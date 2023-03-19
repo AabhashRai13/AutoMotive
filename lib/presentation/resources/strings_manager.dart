@@ -1,6 +1,6 @@
 class AppStrings {
   //App title
-  static const String appTitle = "Pasal";
+  static const String appTitle = "AutoMotiv";
   static const String emptyString = "";
   //route
   static const String noRouteFound = "No Route Found";
@@ -11,10 +11,14 @@ class AppStrings {
   static const String userName = "User Name";
   static const String enterUserName = "Enter your User Name";
   static const String passwordNotMatch = "Password aren't same";
+  static const String otpCode = "OTP";
+  static const String verification = "verfication";
+  static const String otpScreenText = "Enter the otp code send at";
+  static const String sendAgain = "Send OTP Again";
 
-  static const String introScreenText1 = "Welcome to Pasal, Let’s shop!";
+  static const String introScreenText1 = "Welcome to AutoMotive, Let’s shop!";
   static const String introScreenText2 =
-      "We help people conect with store \naround Nepal";
+      "We help people conect with store \naround Australia";
   static const String introScreenText3 =
       "We show the easy way to shop. \nJust stay at home with us";
   // sign in

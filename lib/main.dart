@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import 'presentation/login/screen/login_screen.dart';
 import 'presentation/resources/routes_manager.dart';
 import 'presentation/resources/theme.dart';
 
@@ -20,7 +18,6 @@ class MyApp extends StatelessWidget {
       theme: theme(),
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      home: const LoginScreen(),
       onGenerateRoute: RouteGenerator.getRoute,
       navigatorKey: navigatorKey,
       initialRoute: Routes.initialScreenRoute,
