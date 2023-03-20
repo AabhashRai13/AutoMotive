@@ -5,10 +5,10 @@ import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-class SignUpUsecase implements UseCase<AuthResponse, Params> {
+class SignInUsecase implements UseCase<AuthResponse, Params> {
   final AuthenticationRepository repository;
 
-  SignUpUsecase(this.repository);
+  SignInUsecase(this.repository);
 
   @override
   Future<Either<Failure, AuthResponse>> call(Params params) async {

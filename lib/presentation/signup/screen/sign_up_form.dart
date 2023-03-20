@@ -29,9 +29,9 @@ class SignUpForm extends StatelessWidget {
       child: BlocConsumer<SignUpBloc, SignUpState>(
         listener: (context, state) {
           if (state is Loading) {
-            loading == true;
+            loading = true;
           } else if (state is Loaded) {
-            loading == true;
+            loading = true;
             Navigator.pushReplacementNamed(
                 context, Routes.addLicensePlateScreen);
           } else if (state is Error) {

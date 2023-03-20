@@ -17,7 +17,23 @@ class AuthenticaionRepositoryImpl implements AuthenticationRepository {
   @override
   Future<Either<Failure, AuthResponse>> signInWithEmail(
       {String? email, String? password}) async {
-    throw UnimplementedError();
+    bool connection = await networkInfo.isConnected();
+    if (connection) {
+      try {
+        final result =
+            await suparbaseManager.signInUser(email: email, password: password);
+
+        if (result != null) {
+          return Right(result);
+        } else {
+          return Left(CredentialsFailure());
+        }
+      } on ServerException {
+        return Left(ServerFailure());
+      }
+    } else {
+      return Left(CredentialsFailure());
+    }
   }
 
   @override

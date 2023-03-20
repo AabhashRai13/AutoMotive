@@ -1,5 +1,4 @@
 import 'package:auto_motive/config.dart';
-import 'package:auto_motive/presentation/widgets/toast.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -22,20 +21,13 @@ class SuparbaseManager {
     }
   }
 
-  Future<AuthResponse> signInUser({String? email, String? password}) async {
-    debugPrint("email:$email password:$password");
-    final result = await client.auth
-        .signInWithPassword(email: email!, password: password!);
-    debugPrint(result.toString());
-
-    if (result.user != null) {
-      showToastMessage('Login Success', isError: false);
-
-      showToastMessage('Success', isError: false);
+  Future<AuthResponse?> signInUser({String? email, String? password}) async {
+    try {
+      final result = await client.auth
+          .signInWithPassword(email: email!, password: password!);
       return result;
-    } else {
-      showToastMessage('Check your credentials login failed}', isError: true);
-      return result;
+    } catch (e) {
+      return null;
     }
   }
 

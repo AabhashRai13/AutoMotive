@@ -1,5 +1,6 @@
 import 'package:auto_motive/app/di.dart';
 import 'package:auto_motive/presentation/car_license_plate/cubit/car_license_cubit.dart';
+import 'package:auto_motive/presentation/login/bloc/sign_in_bloc.dart';
 import 'package:auto_motive/presentation/signup/bloc/sign_up_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -27,6 +28,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider<SignUpBloc>(
           create: (_) => sl<SignUpBloc>(),
+        ),
+        BlocProvider<SignInBloc>(
+          create: (_) => sl<SignInBloc>(),
         ),
       ],
       child: MaterialApp(
