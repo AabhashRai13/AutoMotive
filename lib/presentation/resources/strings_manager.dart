@@ -4,7 +4,7 @@ class AppStrings {
   static const String emptyString = "";
   //route
   static const String noRouteFound = "No Route Found";
-  static const String usernameValidationMSg = "Username can't be empty";
+  static const String usernameValidationMSg = "Phonenumber can't be empty";
   static const String emailValidationMSg = "Email can't be empty";
   static const String passwordValidationMSg = "Password can't be empty";
   static const String weakPasswordValidationMSg =
@@ -12,7 +12,7 @@ class AppStrings {
 
   //intro screen Text
   static const String continueText = "Continue";
-  static const String loginText = "Login Text";
+  static const String loginText = "Login";
   static const String userName = "User Name";
   static const String enterUserName = "Enter your User Name";
   static const String passwordNotMatch = "Password aren't same";
@@ -37,13 +37,21 @@ class AppStrings {
   static const String addLicensePlateText =
       "Add valid License Plate number to continue.";
   static const String licensePlateLabe = "License Plate Number";
+
   static const String enterLicensePlateHintText = "Enter License Plate Number";
+  static const String addPhoneNumberValidationError =
+      "You must enter Valid Phone number";
+  static const String addPhoneNumberText =
+      "Add valid Phone number to continue.";
+  static const String phoneNumberLabe = "Phone Number";
+
+  static const String enterPhoneNumberHintText = "Enter Phone Number";
   static const String carFoundPageText =
       "Is this your car? If yes Press Continue.";
   static const String processingData = "Processing Data";
   static const String carNotFound = "Car not Found. Please enter valid data.";
   static const String rememberMe = "Remember me";
-  static const String forgotPassword = "ForgotPassword";
+  static const String signInWithNumber = "Sign in With Number";
   static const String password = "password";
   static const String enterPassword = "Enter your password";
   static const String email = "Email";
@@ -59,15 +67,6 @@ class AppStrings {
   static const String serverFailure = "Check your Network connections";
   static const String credentialsFailure = "Check your Credentials";
 
-  //Error
-  static const String kEmailNullError = "Please Enter your email";
-  static const String kNameNullError = "Please Enter your username";
-
-  static const String kInvalidEmailError = "Please Enter Valid Email";
-  static const String kPassNullError = "Please Enter your password";
-  static const String kShortPassError = "Password is too short";
-  static const String kMatchPassError = "Passwords don't match";
-  static const String kNamelNullError = "Please Enter your name";
-  static const String kPhoneNumberNullError = "Please Enter your phone number";
-  static const String kAddressNullError = "Please Enter your address";
+  static const String phone = "Phone number";
+  static const String enterPhoneNumber = "Enter Phone number";
 }

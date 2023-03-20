@@ -22,8 +22,8 @@ class UserNameFormField extends StatelessWidget {
         return null;
       },
       decoration: const InputDecoration(
-        labelText: AppStrings.userName,
-        hintText: AppStrings.enterUserName,
+        labelText: AppStrings.phone,
+        hintText: AppStrings.enterPhoneNumber,
         suffixIcon: CustomSurffixIcon(svgIcon: ImageAssets.user),
       ),
     );

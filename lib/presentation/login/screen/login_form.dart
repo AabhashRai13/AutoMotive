@@ -3,8 +3,8 @@ import 'package:auto_motive/presentation/resources/color_manager.dart';
 import 'package:auto_motive/presentation/resources/routes_manager.dart';
 import 'package:auto_motive/presentation/resources/size_config.dart';
 import 'package:auto_motive/presentation/widgets/default_button.dart';
+import 'package:auto_motive/presentation/widgets/email_form_field.dart';
 import 'package:auto_motive/presentation/widgets/password_form_field.dart';
-import 'package:auto_motive/presentation/widgets/username_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -41,8 +41,8 @@ class LoginForm extends StatelessWidget {
           key: formKey,
           child: Column(
             children: [
-              UserNameFormField(
-                userNameController: emailController,
+              EmailFormField(
+                emailController: emailController,
               ),
               SizedBox(height: getProportionateScreenHeight(30)),
               PasswordFormField(
@@ -59,9 +59,11 @@ class LoginForm extends StatelessWidget {
                   const Text(AppStrings.rememberMe),
                   const Spacer(),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(context, Routes.signInWithNumber);
+                    },
                     child: const Text(
-                      AppStrings.forgotPassword,
+                      AppStrings.signInWithNumber,
                       style: TextStyle(decoration: TextDecoration.underline),
                     ),
                   )

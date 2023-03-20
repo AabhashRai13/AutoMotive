@@ -4,6 +4,7 @@ import 'package:auto_motive/presentation/home/screens/home_screen.dart';
 import 'package:auto_motive/presentation/login/screen/login_screen.dart';
 import 'package:auto_motive/presentation/login/screen/otp_screen.dart';
 import 'package:auto_motive/presentation/onboarding/screens/onboarding_screen.dart';
+import 'package:auto_motive/presentation/signup/screen/sigin_in_with_number.dart';
 import 'package:auto_motive/presentation/signup/screen/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 import 'strings_manager.dart';
@@ -16,6 +17,7 @@ class Routes {
   static const String addLicensePlateScreen = "/addLicensePlateScreen";
   static const String carFoundPage = "/carFoundPage";
   static const String home = "/home";
+  static const String signInWithNumber = "/signInWithNumber";
 }
 
 class RouteGenerator {
@@ -42,6 +44,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const CarFound());
       case Routes.home:
         return MaterialPageRoute(builder: (_) => const HomeScreen());
+      case Routes.signInWithNumber:
+        return MaterialPageRoute(builder: (_) => SignInWithNumber());
       default:
         return unDefinedRoute();
     }

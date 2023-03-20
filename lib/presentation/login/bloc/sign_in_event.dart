@@ -15,3 +15,13 @@ class SignIn extends SignInEvent {
   @override
   List<Object> get props => [email, password];
 }
+
+class SignInWithOtp extends SignInEvent {
+  final String phoneNumber;
+  const SignInWithOtp({
+    required this.phoneNumber,
+  });
+
+  @override
+  List<Object> get props => [phoneNumber];
+}

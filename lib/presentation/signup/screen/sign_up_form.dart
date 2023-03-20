@@ -73,9 +73,11 @@ class SignUpForm extends StatelessWidget {
                   const Text(AppStrings.rememberMe),
                   const Spacer(),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(context, Routes.signInWithNumber);
+                    },
                     child: const Text(
-                      AppStrings.forgotPassword,
+                      AppStrings.signInWithNumber,
                       style: TextStyle(decoration: TextDecoration.underline),
                     ),
                   )
@@ -89,7 +91,8 @@ class SignUpForm extends StatelessWidget {
                   if (formKey.currentState!.validate()) {
                     context.read<SignUpBloc>().add(SignUp(
                         email: emailController.text.trim(),
-                        password: passwordController.text.trim()));
+                        password: passwordController.text.trim(),
+                        phone: usernameController.text.trim()));
                   }
                 },
               ),

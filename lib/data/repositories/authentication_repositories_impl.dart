@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:auto_motive/app/error/exceptions.dart';
 import 'package:auto_motive/app/error/failures.dart';
 import 'package:auto_motive/app/network/network_info.dart';
@@ -38,18 +40,34 @@ class AuthenticaionRepositoryImpl implements AuthenticationRepository {
 
   @override
   Future<Either<Failure, AuthResponse>> signUp(
-      {String? email, String? password}) async {
+      {String? email, String? password, String? phone}) async {
     bool connection = await networkInfo.isConnected();
     if (connection) {
       try {
-        final result =
-            await suparbaseManager.signUpUser(email: email, password: password);
+        final result = await suparbaseManager.signUpUser(
+            email: email, password: password, phone: phone!);
         return Right(result);
       } on ServerException {
         return Left(ServerFailure());
       }
     } else {
       return Left(CredentialsFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, AuthResponse>> signInWithPhone({String? phone}) async {
+    bool connection = await networkInfo.isConnected();
+    if (connection) {
+      try {
+        await suparbaseManager.signInWithOTP(number: phone);
+        return Right(AuthResponse());
+      } catch (e) {
+        log("$e");
+        return Left(CredentialsFailure());
+      }
+    } else {
+      return Left(ServerFailure());
     }
   }
 }
