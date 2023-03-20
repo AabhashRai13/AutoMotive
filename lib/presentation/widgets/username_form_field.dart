@@ -17,7 +17,7 @@ class UserNameFormField extends StatelessWidget {
       },
       validator: (value) {
         if (value!.isEmpty) {
-          return AppStrings.emptyString;
+          return AppStrings.usernameValidationMSg;
         }
         return null;
       },

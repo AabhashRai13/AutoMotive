@@ -4,6 +4,11 @@ class AppStrings {
   static const String emptyString = "";
   //route
   static const String noRouteFound = "No Route Found";
+  static const String usernameValidationMSg = "Username can't be empty";
+  static const String emailValidationMSg = "Email can't be empty";
+  static const String passwordValidationMSg = "Password can't be empty";
+  static const String weakPasswordValidationMSg =
+      "Password can't be less than 6 characters";
 
   //intro screen Text
   static const String continueText = "Continue";
@@ -51,7 +56,8 @@ class AppStrings {
   static const String reenterYourPassword = "Re-enter your password";
   static const String loginSuccess = "Login Success";
 
-  static const String yourCart = "Your Cart";
+  static const String serverFailure = "Check your Network connections";
+  static const String credentialsFailure = "Check your Credentials";
 
   //Error
   static const String kEmailNullError = "Please Enter your email";

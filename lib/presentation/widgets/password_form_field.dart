@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class PasswordFormField extends StatelessWidget {
   final TextEditingController passwordController;
-  const PasswordFormField({super.key,required this.passwordController});
+  const PasswordFormField({super.key, required this.passwordController});
 
   @override
   Widget build(BuildContext context) {
@@ -12,9 +12,9 @@ class PasswordFormField extends StatelessWidget {
       obscureText: true,
       validator: (value) {
         if (value!.isEmpty) {
-          return "";
+          return AppStrings.passwordValidationMSg;
         } else if (value.length < 6) {
-          return "";
+          return AppStrings.weakPasswordValidationMSg;
         }
         return null;
       },

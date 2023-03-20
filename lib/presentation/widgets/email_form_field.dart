@@ -20,7 +20,7 @@ class EmailFormField extends StatelessWidget {
         if (value!.isEmpty) {
           return AppStrings.emptyString;
         } else if (!emailValidatorRegExp.hasMatch(value)) {
-          return AppStrings.emptyString;
+          return AppStrings.emailValidationMSg;
         }
         return null;
       },
