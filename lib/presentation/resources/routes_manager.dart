@@ -1,5 +1,6 @@
 import 'package:auto_motive/presentation/car_license_plate/screens/add_car_license_plate.dart';
 import 'package:auto_motive/presentation/card_found/screens/car_found_page.dart';
+import 'package:auto_motive/presentation/home/screens/home_screen.dart';
 import 'package:auto_motive/presentation/login/screen/login_screen.dart';
 import 'package:auto_motive/presentation/login/screen/otp_screen.dart';
 import 'package:auto_motive/presentation/onboarding/screens/onboarding_screen.dart';
@@ -14,6 +15,7 @@ class Routes {
   static const String otpScreen = "/otpScreen";
   static const String addLicensePlateScreen = "/addLicensePlateScreen";
   static const String carFoundPage = "/carFoundPage";
+  static const String home = "/home";
 }
 
 class RouteGenerator {
@@ -38,6 +40,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => AddCarLicensePlate());
       case Routes.carFoundPage:
         return MaterialPageRoute(builder: (_) => const CarFound());
+      case Routes.home:
+        return MaterialPageRoute(builder: (_) => const HomeScreen());
       default:
         return unDefinedRoute();
     }
