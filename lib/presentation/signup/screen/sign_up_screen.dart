@@ -3,7 +3,6 @@ import 'package:auto_motive/presentation/resources/color_manager.dart';
 import 'package:auto_motive/presentation/resources/size_config.dart';
 import 'package:auto_motive/presentation/resources/strings_manager.dart';
 import 'package:auto_motive/presentation/signup/screen/sign_up_form.dart';
-import 'package:auto_motive/presentation/widgets/no_account_text.dart';
 import 'package:auto_motive/presentation/widgets/social_cards.dart';
 import 'package:flutter/material.dart';
 
@@ -57,7 +56,6 @@ class SignUpScreen extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: getProportionateScreenHeight(20)),
-                  const NoAccountText(),
                 ],
               ),
             ),

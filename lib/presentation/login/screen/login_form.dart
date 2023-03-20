@@ -57,6 +57,7 @@ class LoginForm extends StatelessWidget {
           //   )
           // :
           DefaultButton(
+            loading: false,
             text: AppStrings.loginText,
             press: () {
               log("numbr ${numberEditingController.text.trim()}");

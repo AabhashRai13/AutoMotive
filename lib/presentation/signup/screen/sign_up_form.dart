@@ -1,4 +1,5 @@
 import 'package:auto_motive/presentation/resources/color_manager.dart';
+import 'package:auto_motive/presentation/resources/routes_manager.dart';
 import 'package:auto_motive/presentation/resources/size_config.dart';
 import 'package:auto_motive/presentation/widgets/confirm_password_form_field.dart';
 import 'package:auto_motive/presentation/widgets/default_button.dart';
@@ -71,8 +72,11 @@ class SignUpForm extends StatelessWidget {
           //   )
           // :
           DefaultButton(
-            text: AppStrings.loginText,
-            press: () {},
+            loading: false,
+            text: AppStrings.signUp,
+            press: () {
+              Navigator.pushNamed(context, Routes.addLicensePlateScreen);
+            },
           ),
         ],
       ),

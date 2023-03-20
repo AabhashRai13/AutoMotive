@@ -1,4 +1,6 @@
+import 'package:auto_motive/presentation/car_license_plate/cubit/car_license_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'presentation/resources/routes_manager.dart';
 import 'presentation/resources/theme.dart';
 
@@ -14,13 +16,20 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: theme(),
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      onGenerateRoute: RouteGenerator.getRoute,
-      navigatorKey: navigatorKey,
-      initialRoute: Routes.initialScreenRoute,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<CarLicenseCubit>(
+          create: (BuildContext context) => CarLicenseCubit(),
+        ),
+      ],
+      child: MaterialApp(
+        theme: theme(),
+        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+        onGenerateRoute: RouteGenerator.getRoute,
+        navigatorKey: navigatorKey,
+        initialRoute: Routes.initialScreenRoute,
+      ),
     );
   }
 }

@@ -42,6 +42,7 @@ class OTPScreen extends StatelessWidget {
             ),
             const SizedBox(height: 20.0),
             DefaultButton(
+              loading: false,
               text: AppStrings.sendAgain,
               press: () {},
             ),

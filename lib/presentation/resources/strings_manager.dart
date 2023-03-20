@@ -27,6 +27,16 @@ class AppStrings {
   static const String signInPageText = "Your Solution to all Auto Motive needs";
   static const String signUpPageText = "Sign Up to get all the best deals";
 
+  static const String addLicensePlateValidationError =
+      "You must enter Valid License plate number";
+  static const String addLicensePlateText =
+      "Add valid License Plate number to continue.";
+  static const String licensePlateLabe = "License Plate Number";
+  static const String enterLicensePlateHintText = "Enter License Plate Number";
+  static const String carFoundPageText =
+      "Is this your car? If yes Press Continue.";
+  static const String processingData = "Processing Data";
+  static const String carNotFound = "Car not Found. Please enter valid data.";
   static const String rememberMe = "Remember me";
   static const String forgotPassword = "ForgotPassword";
   static const String password = "password";

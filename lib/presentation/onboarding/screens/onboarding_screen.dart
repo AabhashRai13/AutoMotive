@@ -75,6 +75,7 @@ class OnboardingScreenState extends State<OnboardingScreen> {
                       ),
                       const Spacer(flex: 3),
                       DefaultButton(
+                        loading: false,
                         text: AppStrings.continueText,
                         press: () {
                           Navigator.pushReplacementNamed(
