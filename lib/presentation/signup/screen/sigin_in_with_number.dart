@@ -1,4 +1,3 @@
-import 'package:auto_motive/presentation/car_license_plate/cubit/car_license_cubit.dart';
 import 'package:auto_motive/presentation/login/bloc/sign_in_bloc.dart';
 import 'package:auto_motive/presentation/resources/color_manager.dart';
 import 'package:auto_motive/presentation/resources/routes_manager.dart';
