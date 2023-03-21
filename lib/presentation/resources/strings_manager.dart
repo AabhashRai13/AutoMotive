@@ -20,6 +20,8 @@ class AppStrings {
   static const String verification = "verfication";
   static const String otpScreenText = "Enter the otp code send at";
   static const String sendAgain = "Send OTP Again";
+  static const String orSignUp = "or sign up with";
+  static const String haveAnAcountText = "Have an account?";
 
   static const String introScreenText1 = "Welcome to AutoMotive, Let’s shop!";
   static const String introScreenText2 =
@@ -30,7 +32,8 @@ class AppStrings {
   static const String signIn = "Sign In";
   static const String automotiveText = "Automotiv App";
   static const String signInPageText = "Your Solution to all Auto Motive needs";
-  static const String signUpPageText = "Sign Up to get all the best deals";
+  static const String signUpPageText =
+      "Quickly use your mobile number to create an account or use one of the other options below.";
 
   static const String addLicensePlateValidationError =
       "You must enter Valid License plate number";
@@ -69,4 +72,6 @@ class AppStrings {
 
   static const String phone = "Phone number";
   static const String enterPhoneNumber = "Enter Phone number";
+
+  static const String quickSignUp = "Quick sign up";
 }

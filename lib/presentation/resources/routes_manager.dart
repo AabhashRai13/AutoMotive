@@ -32,7 +32,7 @@ class RouteGenerator {
       case Routes.signUp:
         return MaterialPageRoute(builder: (_) => const SignUpScreen());
       case Routes.otpScreen:
-        final args = routeSettings.arguments as int;
+        final args = routeSettings.arguments as String;
 
         return MaterialPageRoute(
             builder: (_) => OTPScreen(

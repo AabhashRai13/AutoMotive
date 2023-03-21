@@ -8,7 +8,7 @@ import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/style.dart';
 
 class OTPScreen extends StatelessWidget {
-  final int number;
+  final String number;
   const OTPScreen({Key? key, required this.number}) : super(key: key);
 
   @override
