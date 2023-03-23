@@ -18,14 +18,18 @@ class OnboardingScreen extends StatefulWidget {
 class OnboardingScreenState extends State<OnboardingScreen> {
   List<OnboardingScreenModel> introScreenData = [
     const OnboardingScreenModel(
-      text: AppStrings.introScreenText1,
+      text: "Your Personal Assistant",
+      textDesc:
+          "Get help with your car insurance, rego renewal, and servicing with Service Journal. Your personal assistant ensures you're never caught off guard",
     ),
     const OnboardingScreenModel(
-      text: AppStrings.introScreenText2,
-    ),
+        text: "Keep track of all your rides",
+        textDesc:
+            "Whether you have one car or a whole fleet, SJ makes it easy to keep track of all your vehicles. Simply add each car to your profile and setup the assistant."),
     const OnboardingScreenModel(
-      text: AppStrings.introScreenText3,
-    )
+        text: "Goodbye Paper",
+        textDesc:
+            "Say goodbye to the stress of keeping a paper logbook! We make it easy to keep track of all your car maintenance needs in one place. ")
   ];
   var currentPage = 0;
 
@@ -39,56 +43,56 @@ class OnboardingScreenState extends State<OnboardingScreen> {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
 
-    return Scaffold(
-      body: SafeArea(
-        child: SizedBox(
-          width: double.infinity,
-          child: Column(
-            children: <Widget>[
-              Expanded(
-                flex: 3,
-                child: PageView.builder(
-                  onPageChanged: (value) {
-                    assignPage(value);
-                  },
-                  itemCount: introScreenData.length,
-                  itemBuilder: (context, index) => IntroScreenContent(
-                    image: introScreenData[index].imgString,
-                    text: introScreenData[index].text,
-                  ),
+    return ClipPath(
+      clipper: TopCurveClipper(),
+      child: Container(
+        color: Colors.white,
+        width: MediaQuery.of(context).size.width,
+        height: getProportionateScreenHeight(360),
+        child: Column(
+          children: <Widget>[
+            Expanded(
+              flex: 3,
+              child: PageView.builder(
+                onPageChanged: (value) {
+                  assignPage(value);
+                },
+                itemCount: introScreenData.length,
+                itemBuilder: (context, index) => IntroScreenContent(
+                  textDesc: introScreenData[index].textDesc,
+                  text: introScreenData[index].text,
                 ),
               ),
-              Expanded(
-                flex: 2,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: getProportionateScreenWidth(20)),
-                  child: Column(
-                    children: <Widget>[
-                      const Spacer(),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: List.generate(
-                          introScreenData.length,
-                          (index) => buildDot(index: index),
-                        ),
+            ),
+            Expanded(
+              flex: 2,
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: getProportionateScreenWidth(20)),
+                child: Column(
+                  children: <Widget>[
+                    const Spacer(),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: List.generate(
+                        introScreenData.length,
+                        (index) => buildDot(index: index),
                       ),
-                      const Spacer(flex: 3),
-                      DefaultButton(
-                        loading: false,
-                        text: AppStrings.continueText,
-                        press: () {
-                          Navigator.pushReplacementNamed(
-                              context, Routes.signIn);
-                        },
-                      ),
-                      const Spacer(),
-                    ],
-                  ),
+                    ),
+                    const Spacer(flex: 3),
+                    DefaultButton(
+                      loading: false,
+                      text: AppStrings.continueText,
+                      press: () {
+                        Navigator.pushReplacementNamed(context, Routes.signIn);
+                      },
+                    ),
+                    const Spacer(),
+                  ],
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
@@ -108,4 +112,21 @@ class OnboardingScreenState extends State<OnboardingScreen> {
       ),
     );
   }
+}
+
+class TopCurveClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    Path path = Path();
+    path.moveTo(0, size.height);
+    path.lineTo(0, size.height - 320);
+    path.quadraticBezierTo(
+        size.width / 2, size.height - 380, size.width, size.height - 320);
+    path.lineTo(size.width, size.height);
+    path.close();
+    return path;
+  }
+
+  @override
+  bool shouldReclip(TopCurveClipper oldClipper) => false;
 }

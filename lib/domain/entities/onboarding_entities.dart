@@ -1,8 +1,8 @@
 class OnboardingScreenModel {
   final String text;
-  final String? imgString;
+  final String? textDesc;
   const OnboardingScreenModel({
     required this.text,
-     this.imgString,
+     this.textDesc,
   });
 }

@@ -8,29 +8,28 @@ class IntroScreenContent extends StatelessWidget {
   const IntroScreenContent({
     Key? key,
     this.text,
-    this.image,
+    this.textDesc,
   }) : super(key: key);
-  final String? text, image;
+  final String? text, textDesc;
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        const Spacer(),
-        Text(
-          AppStrings.appTitle,
-          style: TextStyle(
-            fontSize: getProportionateScreenWidth(36),
-            color: ColorManager.primary,
-            fontWeight: FontWeight.bold,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        children: <Widget>[
+          const Spacer(),
+          Text(text!,
+              textAlign: TextAlign.center,
+              style: const TextStyle(fontWeight: FontWeight.bold)),
+          SizedBox(
+            height: getProportionateScreenHeight(8),
           ),
-        ),
-        Text(
-          text!,
-          textAlign: TextAlign.center,
-        ),
-        const Spacer(flex: 2),
-      ],
+          Text(textDesc!,
+              textAlign: TextAlign.center,
+              style: TextStyle(color: ColorManager.normalBorderColor)),
+        ],
+      ),
     );
   }
 }

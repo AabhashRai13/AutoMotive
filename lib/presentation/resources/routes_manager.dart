@@ -2,6 +2,7 @@ import 'package:auto_motive/presentation/car_license_plate/screens/add_car_licen
 import 'package:auto_motive/presentation/car_found/screens/car_found_page.dart';
 import 'package:auto_motive/presentation/home/screens/home_screen.dart';
 import 'package:auto_motive/presentation/login/screen/login_screen.dart';
+import 'package:auto_motive/presentation/onboarding/screens/background.dart';
 import 'package:auto_motive/presentation/onboarding/screens/onboarding_screen.dart';
 import 'package:auto_motive/presentation/otp_verification/screen/otp_screen.dart';
 import 'package:auto_motive/presentation/login/screen/sigin_in_with_number.dart';
@@ -26,7 +27,7 @@ class RouteGenerator {
   ) {
     switch (routeSettings.name) {
       case Routes.initialScreenRoute:
-        return MaterialPageRoute(builder: (_) => const OnboardingScreen());
+        return MaterialPageRoute(builder: (_) => const BackGround());
       case Routes.signIn:
         return MaterialPageRoute(builder: (_) => const LoginScreen());
       case Routes.signUp:
