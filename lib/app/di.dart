@@ -6,6 +6,7 @@ import 'package:auto_motive/domain/usecases/sigin_in_with_otp_usecase.dart';
 import 'package:auto_motive/domain/usecases/sign_in_usecase.dart';
 import 'package:auto_motive/domain/usecases/sign_up_usecase.dart';
 import 'package:auto_motive/domain/usecases/verify_otp_usecase.dart';
+import 'package:auto_motive/presentation/car_license_plate/cubit/car_license_cubit.dart';
 import 'package:auto_motive/presentation/login/bloc/sign_in_bloc.dart';
 import 'package:auto_motive/presentation/login/screen_switch_bloc/switch_screen_bloc.dart';
 
@@ -46,6 +47,6 @@ Future<void> initAppModule() async {
   sl.registerFactory<OtpVerificationCubit>(() => OtpVerificationCubit(sl()));
   sl.registerFactory<SelectionButtonCubit>(() => SelectionButtonCubit());
   sl.registerFactory<ScreenSwitchBloc>(() => ScreenSwitchBloc());
-    sl.registerFactory<ObscureCubit>(() => ObscureCubit());
-
+  sl.registerFactory<ObscureCubit>(() => ObscureCubit());
+  sl.registerFactory<CarLicenseCubit>(() => CarLicenseCubit());
 }

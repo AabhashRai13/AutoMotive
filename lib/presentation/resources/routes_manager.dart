@@ -1,5 +1,5 @@
 import 'package:auto_motive/presentation/car_license_plate/screens/add_car_license_plate.dart';
-import 'package:auto_motive/presentation/card_found/screens/car_found_page.dart';
+import 'package:auto_motive/presentation/car_found/screens/car_found_page.dart';
 import 'package:auto_motive/presentation/home/screens/home_screen.dart';
 import 'package:auto_motive/presentation/login/screen/login_screen.dart';
 import 'package:auto_motive/presentation/onboarding/screens/onboarding_screen.dart';

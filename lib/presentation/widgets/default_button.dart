@@ -9,6 +9,7 @@ class DefaultButton extends StatelessWidget {
       this.press,
       required this.loading,
       this.buttonColor,
+      this.height,
       this.textColor})
       : super(key: key);
   final String? text;
@@ -16,11 +17,12 @@ class DefaultButton extends StatelessWidget {
   final bool loading;
   final Color? buttonColor;
   final Color? textColor;
+  final double? height;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: getProportionateScreenHeight(56),
+      height: height ?? getProportionateScreenHeight(56),
       child: TextButton(
         style: TextButton.styleFrom(
           foregroundColor: Colors.white,

@@ -13,15 +13,16 @@ class InputFields extends StatelessWidget {
   final String? hintText;
   final String? labelText;
   final String? icon;
-  const InputFields({
-    super.key,
-    required this.inputController,
-    required this.isRequired,
-    this.validationMsg,
-    this.hintText,
-    this.labelText,
-    this.icon,
-  });
+  final String? prefixIcon;
+  const InputFields(
+      {super.key,
+      required this.inputController,
+      required this.isRequired,
+      this.validationMsg,
+      this.hintText,
+      this.labelText,
+      this.icon,
+      this.prefixIcon});
 
   @override
   Widget build(BuildContext context) {
@@ -37,12 +38,23 @@ class InputFields extends StatelessWidget {
         return null;
       },
       decoration: InputDecoration(
-        label: labelTexts(labelText),
-        hintText: hintText ?? AppStrings.emptyString,
-        suffixIcon: icon == ""
-            ? const CustomSurffixIcon(svgIcon: ImageAssets.user)
-            : null,
-      ),
+          label: labelTexts(labelText),
+          hintText: hintText ?? AppStrings.emptyString,
+          prefixIcon: prefixIcon == null
+              ? null
+              : CustomSurffixIcon(
+                  isPhoneNumber: false,
+                  svgIcon: prefixIcon!,
+                  leftPadding: 20,
+                  rightPadding: 4,
+                ),
+          suffixIcon: icon == null
+              ? null
+              : CustomSurffixIcon(
+                  leftPadding: 0,
+                  svgIcon: icon!,
+                  isPhoneNumber: false,
+                )),
     );
   }
 

@@ -25,6 +25,8 @@ class AppStrings {
       "A text verification code has been sent to your mobile ";
   static const String otpScreenText2 = "Didn't receive a code?";
   static const String sendAgain = "Request Again";
+  static const String searchAgain = "Search Again";
+
   static const String getViaCall = "Get Via call";
   static const String orSignUp = "or sign up with";
   static const String orSignIn = "or sign in with";
@@ -46,8 +48,7 @@ class AppStrings {
 
   static const String addLicensePlateValidationError =
       "You must enter Valid License plate number";
-  static const String addLicensePlateText =
-      "Add valid License Plate number to continue.";
+  static const String addLicensePlateText = "Enter your rego";
   static const String licensePlateLabe = "License Plate Number";
 
   static const String enterLicensePlateHintText = "Enter License Plate Number";
@@ -61,7 +62,9 @@ class AppStrings {
   static const String carFoundPageText =
       "Is this your car? If yes Press Continue.";
   static const String processingData = "Processing Data";
-  static const String carNotFound = "Car not Found. Please enter valid data.";
+  static const String carNotFoundTitle = "Rego Not Found";
+  static const String carNotFound =
+      "Hmm that Rego didn't return a result. Alternatively find";
   static const String rememberMe = "Remember me";
   static const String signUpScreenText2 =
       "We will send a verifcation code on this number";

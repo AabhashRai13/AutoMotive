@@ -28,4 +28,3 @@ class Error extends SignUpState {
   @override
   List<Object> get props => [message];
 }
-
