@@ -15,8 +15,8 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
   }
   signUp(SignUp event, Emitter<SignUpState> emit) async {
     emit(Loading());
-    final result = await signUpUsecase
-        .call(Params(email: event.email, password: event.password, phone: event.phone));
+    final result = await signUpUsecase.call(Params(
+        email: event.email, password: event.password, phone: event.phone));
     result.fold((l) {
       if (l is ServerFailure) {
         emit(const Error(message: AppStrings.serverFailure));
@@ -25,5 +25,4 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
       }
     }, (r) => emit(Loaded(authResponse: r)));
   }
-
 }

@@ -6,6 +6,9 @@ abstract class AuthenticationRepository {
   Future<Either<Failure, AuthResponse>> signInWithEmail(
       {String email, String password});
   Future<Either<Failure, AuthResponse>> signInWithPhone({String phone});
+  Future<Either<Failure, AuthResponse>> verifyOtp(
+      {String phone, String? otpNumer});
+
   Future<Either<Failure, AuthResponse>> signUp(
       {String email, String password, String phone});
 }

@@ -1,3 +1,5 @@
+import 'package:auto_motive/app/constants/regx.dart';
+import 'package:auto_motive/presentation/resources/size_config.dart';
 import 'package:auto_motive/presentation/resources/strings_manager.dart';
 import 'package:flutter/material.dart';
 
@@ -18,13 +20,31 @@ class UserNameFormField extends StatelessWidget {
       validator: (value) {
         if (value!.isEmpty) {
           return AppStrings.usernameValidationMSg;
+        } else if (!phoneValidation.hasMatch(value)) {
+          return AppStrings.phoneValidationMSg;
         }
         return null;
       },
-      decoration: const InputDecoration(
-        labelText: AppStrings.phone,
+      decoration: InputDecoration(
+        label: SizedBox(
+          width: getProportionateScreenWidth(65),
+          child: Row(
+            children: const [
+              Text(AppStrings.phone),
+              Text(
+                " *",
+                style: TextStyle(color: Colors.red),
+              )
+            ],
+          ),
+        ),
         hintText: AppStrings.enterPhoneNumber,
-        suffixIcon: CustomSurffixIcon(svgIcon: ImageAssets.user),
+        prefixIcon: const CustomSurffixIcon(
+          isPhoneNumber: true,
+          svgIcon: ImageAssets.auIcon,
+          leftPadding: 20,
+          rightPadding: 4,
+        ),
       ),
     );
   }

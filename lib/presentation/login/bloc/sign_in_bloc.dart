@@ -34,6 +34,7 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
   }
 
   signInWithNumber(SignInWithOtp event, Emitter<SignInState> emit) async {
+    emit(Loading());
     final result = await signInWithNumberUsecase
         .call(NumberParams(phoneNumber: event.phoneNumber));
     result.fold((l) {
@@ -43,7 +44,7 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
         emit(const Error(message: AppStrings.credentialsFailure));
       }
     }, (r) {
-      emit(OtpSent());
+      emit(const OtpSent(sent: true));
     });
   }
 }

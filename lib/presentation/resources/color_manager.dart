@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 
 class ColorManager {
   static Color primary = HexColor.fromHex("#4F3CEC");
+
+  static Color teal = HexColor.fromHex("#2AD2A1");
+
+  static Color blueBackground = HexColor.fromHex("#F4F7FF");
   static Color kTextColor = Colors.black;
   static Color normalBorderColor = Colors.grey[400]!;
 }

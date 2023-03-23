@@ -46,7 +46,11 @@ class AuthenticaionRepositoryImpl implements AuthenticationRepository {
       try {
         final result = await suparbaseManager.signUpUser(
             email: email, password: password, phone: phone!);
-        return Right(result);
+        if (result != null) {
+          return Right(result);
+        } else {
+          return Left(CredentialsFailure());
+        }
       } on ServerException {
         return Left(ServerFailure());
       }
@@ -61,6 +65,24 @@ class AuthenticaionRepositoryImpl implements AuthenticationRepository {
     if (connection) {
       try {
         await suparbaseManager.signInWithOTP(number: phone);
+        return Right(AuthResponse());
+      } catch (e) {
+        log("$e");
+        return Left(CredentialsFailure());
+      }
+    } else {
+      return Left(ServerFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, AuthResponse>> verifyOtp(
+      {String? phone, String? otpNumer}) async {
+    bool connection = await networkInfo.isConnected();
+    if (connection) {
+      try {
+        await suparbaseManager.verifyOTP(
+            phoneNumber: phone, otpNumber: otpNumer);
         return Right(AuthResponse());
       } catch (e) {
         log("$e");

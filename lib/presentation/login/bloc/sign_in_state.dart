@@ -9,9 +9,17 @@ abstract class SignInState extends Equatable {
 
 class SignInInitial extends SignInState {}
 
-class Loading extends SignInState {}
+class Loading extends SignInState {
+  @override
+  List<Object> get props => [];
+}
 
-class OtpSent extends SignInState {}
+class OtpSent extends SignInState {
+  final bool? sent;
+  const OtpSent({this.sent});
+  @override
+  List<Object> get props => [sent!];
+}
 
 class Loaded extends SignInState {
   final AuthResponse authResponse;

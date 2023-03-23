@@ -14,4 +14,7 @@ class ImageAssets {
   static const String user = "$iconPath/User.svg";
   static const String phone = "$iconPath/Phone.svg";
   static const String backArrow = "$iconPath/back_arrow.png";
+  static const String auIcon = "$iconPath/AU.svg";
+  static const String eyeIcon = "$iconPath/eye.svg";
+  static const String eyeClosedIcon = "$iconPath/eye-slash.svg";
 }

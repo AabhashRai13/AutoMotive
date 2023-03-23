@@ -1,5 +1,6 @@
 import 'package:auto_motive/app/constants/regx.dart';
 import 'package:auto_motive/presentation/resources/assets_manager.dart';
+import 'package:auto_motive/presentation/resources/size_config.dart';
 import 'package:flutter/material.dart';
 
 import '../resources/strings_manager.dart';
@@ -24,10 +25,22 @@ class EmailFormField extends StatelessWidget {
         }
         return null;
       },
-      decoration: const InputDecoration(
-        labelText: AppStrings.email,
+      decoration: InputDecoration(
+        label: SizedBox(
+          width: getProportionateScreenWidth(50),
+          child: Row(
+            children: const [
+              Text(AppStrings.email),
+              Text(
+                " *",
+                style: TextStyle(color: Colors.red),
+              )
+            ],
+          ),
+        ),
         hintText: AppStrings.enterEmail,
-        suffixIcon: CustomSurffixIcon(svgIcon: ImageAssets.smsIcon),
+        suffixIcon: const CustomSurffixIcon(
+            isPhoneNumber: false, svgIcon: ImageAssets.smsIcon),
       ),
     );
   }

@@ -2,9 +2,9 @@ import 'package:auto_motive/presentation/car_license_plate/screens/add_car_licen
 import 'package:auto_motive/presentation/card_found/screens/car_found_page.dart';
 import 'package:auto_motive/presentation/home/screens/home_screen.dart';
 import 'package:auto_motive/presentation/login/screen/login_screen.dart';
-import 'package:auto_motive/presentation/login/screen/otp_screen.dart';
 import 'package:auto_motive/presentation/onboarding/screens/onboarding_screen.dart';
-import 'package:auto_motive/presentation/signup/screen/sigin_in_with_number.dart';
+import 'package:auto_motive/presentation/otp_verification/screen/otp_screen.dart';
+import 'package:auto_motive/presentation/login/screen/sigin_in_with_number.dart';
 import 'package:auto_motive/presentation/signup/screen/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 import 'strings_manager.dart';

@@ -4,7 +4,10 @@ class AppStrings {
   static const String emptyString = "";
   //route
   static const String noRouteFound = "No Route Found";
-  static const String usernameValidationMSg = "Phonenumber can't be empty";
+  static const String usernameValidationMSg = "Mobile can't be empty";
+  static const String phoneValidationMSg = "Mobile format Invalid";
+  static const String forgetPassword = "Forgot Password?";
+
   static const String emailValidationMSg = "Email can't be empty";
   static const String passwordValidationMSg = "Password can't be empty";
   static const String weakPasswordValidationMSg =
@@ -17,10 +20,15 @@ class AppStrings {
   static const String enterUserName = "Enter your User Name";
   static const String passwordNotMatch = "Password aren't same";
   static const String otpCode = "OTP";
-  static const String verification = "verfication";
-  static const String otpScreenText = "Enter the otp code send at";
-  static const String sendAgain = "Send OTP Again";
+  static const String verification = "Verify Mobile";
+  static const String otpScreenText =
+      "A text verification code has been sent to your mobile ";
+  static const String otpScreenText2 = "Didn't receive a code?";
+  static const String sendAgain = "Request Again";
+  static const String getViaCall = "Get Via call";
   static const String orSignUp = "or sign up with";
+  static const String orSignIn = "or sign in with";
+
   static const String haveAnAcountText = "Have an account?";
 
   static const String introScreenText1 = "Welcome to AutoMotive, Let’s shop!";
@@ -31,7 +39,8 @@ class AppStrings {
   // sign in
   static const String signIn = "Sign In";
   static const String automotiveText = "Automotiv App";
-  static const String signInPageText = "Your Solution to all Auto Motive needs";
+  static const String signInPageText =
+      "We are happy to see you again. To use your account login first.";
   static const String signUpPageText =
       "Quickly use your mobile number to create an account or use one of the other options below.";
 
@@ -54,6 +63,9 @@ class AppStrings {
   static const String processingData = "Processing Data";
   static const String carNotFound = "Car not Found. Please enter valid data.";
   static const String rememberMe = "Remember me";
+  static const String signUpScreenText2 =
+      "We will send a verifcation code on this number";
+
   static const String signInWithNumber = "Sign in With Number";
   static const String password = "password";
   static const String enterPassword = "Enter your password";
@@ -66,12 +78,17 @@ class AppStrings {
   static const String confirmPassword = "Confirm Password";
   static const String reenterYourPassword = "Re-enter your password";
   static const String loginSuccess = "Login Success";
+  static const String enterFirstName = "Enter your First Name";
+  static const String enterLastName = "Enter your Last Name";
 
+  static const String firstNameLabel = "First Name";
+  static const String lastNameLabel = "Last Name";
   static const String serverFailure = "Check your Network connections";
   static const String credentialsFailure = "Check your Credentials";
 
-  static const String phone = "Phone number";
+  static const String phone = "Mobile";
   static const String enterPhoneNumber = "Enter Phone number";
 
   static const String quickSignUp = "Quick sign up";
+  static const String welcomeBack = "Welcome back";
 }

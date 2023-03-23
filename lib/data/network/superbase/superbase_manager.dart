@@ -10,21 +10,24 @@ const String token = MyConfig.token;
 class SuparbaseManager {
   final client = SupabaseClient(supabaseUrl, token);
 
-  Future<AuthResponse> signUpUser(
+  Future<AuthResponse?> signUpUser(
       {String? email, String? password, required String phone}) async {
-    debugPrint("email:$email password:$password");
-    final result = await client.auth.signUp(
-      email: email!,
-      password: password!,
-      //phone: phone,
-    );
+    try {
+      final result = await client.auth.signUp(
+        email: email!,
+        password: password!,
+        //phone: phone,
+      );
 
-    debugPrint(result.toString());
+      debugPrint(result.toString());
 
-    if (result.user != null) {
-      return result;
-    } else {
-      return result;
+      if (result.user != null) {
+        return result;
+      } else {
+        return result;
+      }
+    } catch (e) {
+      return null;
     }
   }
 
@@ -40,24 +43,31 @@ class SuparbaseManager {
 
   Future<void> signInWithOTP({String? number}) async {
     log("61$number");
+
     await client.auth.signInWithOtp(
-      phone: "$number",
+      phone: "61$number",
     );
   }
 
   Future<AuthResponse?> verifyOTP(
       {String? phoneNumber, String? otpNumber}) async {
     try {
+      log("user pugyo eta");
+      log("$phoneNumber $otpNumber");
       final AuthResponse res = await client.auth.verifyOTP(
         type: OtpType.sms,
         token: otpNumber!,
-        phone: phoneNumber,
+        phone: "61$phoneNumber",
       );
 
+// { data, error } = await client.auth.verifyOtp({ phone, token, type: 'sms'})
+
+      log(res.user!.id);
       final User? user = res.user;
       log("user $user");
       return res;
     } catch (e) {
+      log("$e");
       return null;
     }
   }

@@ -4,10 +4,18 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../resources/size_config.dart';
 
 class CustomSurffixIcon extends StatelessWidget {
-  const CustomSurffixIcon({
-    Key? key,
-    required this.svgIcon,
-  }) : super(key: key);
+  final double? leftPadding;
+  final double? rightPadding;
+  final bool? isPhoneNumber;
+  final Function? function;
+  const CustomSurffixIcon(
+      {Key? key,
+      required this.svgIcon,
+      this.leftPadding,
+      this.rightPadding,
+      this.isPhoneNumber,
+      this.function})
+      : super(key: key);
 
   final String svgIcon;
 
@@ -15,15 +23,33 @@ class CustomSurffixIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.fromLTRB(
-        0,
+        leftPadding != null ? getProportionateScreenWidth(leftPadding!) : 0,
         getProportionateScreenWidth(20),
-        getProportionateScreenWidth(20),
+        rightPadding != null
+            ? getProportionateScreenWidth(rightPadding!)
+            : getProportionateScreenWidth(20),
         getProportionateScreenWidth(20),
       ),
-      child: SvgPicture.asset(
-        svgIcon,
-        height: getProportionateScreenWidth(18),
-      ),
+      child: isPhoneNumber!
+          ? SizedBox(
+              width: getProportionateScreenWidth(52),
+              child: Row(
+                children: [
+                  SvgPicture.asset(
+                    svgIcon,
+                    height: getProportionateScreenWidth(18),
+                  ),
+                  const Text(" +61 |"),
+                ],
+              ),
+            )
+          : GestureDetector(
+              onTap: function as void Function()?,
+              child: SvgPicture.asset(
+                svgIcon,
+                height: getProportionateScreenWidth(18),
+              ),
+            ),
     );
   }
 }
