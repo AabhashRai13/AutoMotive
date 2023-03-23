@@ -21,7 +21,8 @@ class IntroScreenContent extends StatelessWidget {
           const Spacer(),
           Text(text!,
               textAlign: TextAlign.center,
-              style: const TextStyle(fontWeight: FontWeight.bold)),
+              style:
+                  const TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
           SizedBox(
             height: getProportionateScreenHeight(8),
           ),
