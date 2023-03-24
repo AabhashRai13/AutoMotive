@@ -3,7 +3,6 @@ import 'package:auto_motive/presentation/resources/assets_manager.dart';
 import 'package:auto_motive/presentation/resources/size_config.dart';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 // ignore: must_be_immutable
 class BackGround extends StatelessWidget {

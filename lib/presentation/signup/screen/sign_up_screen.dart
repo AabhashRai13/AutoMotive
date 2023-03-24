@@ -1,6 +1,5 @@
 import 'package:auto_motive/presentation/resources/assets_manager.dart';
 import 'package:auto_motive/presentation/resources/color_manager.dart';
-import 'package:auto_motive/presentation/resources/routes_manager.dart';
 import 'package:auto_motive/presentation/resources/size_config.dart';
 import 'package:auto_motive/presentation/resources/strings_manager.dart';
 import 'package:auto_motive/presentation/signup/screen/sign_up_form.dart';

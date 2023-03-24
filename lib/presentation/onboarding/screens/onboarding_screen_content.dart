@@ -1,5 +1,4 @@
 import 'package:auto_motive/presentation/resources/color_manager.dart';
-import 'package:auto_motive/presentation/resources/strings_manager.dart';
 import 'package:flutter/material.dart';
 
 import '../../resources/size_config.dart';

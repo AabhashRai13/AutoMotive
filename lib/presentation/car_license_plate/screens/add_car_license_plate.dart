@@ -199,7 +199,6 @@ class AddCarLicensePlate extends StatelessWidget {
 class TopCurveClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
-    print(size.height);
     Path path = Path();
     path.moveTo(0, size.height);
     path.lineTo(0, size.height - 400);

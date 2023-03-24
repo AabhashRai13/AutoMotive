@@ -42,8 +42,6 @@ class SuparbaseManager {
   }
 
   Future<void> signInWithOTP({String? number}) async {
-    log("61$number");
-
     await client.auth.signInWithOtp(
       phone: "61$number",
     );
@@ -52,7 +50,6 @@ class SuparbaseManager {
   Future<AuthResponse?> verifyOTP(
       {String? phoneNumber, String? otpNumber}) async {
     try {
-      log("user pugyo eta");
       log("$phoneNumber $otpNumber");
       final AuthResponse res = await client.auth.verifyOTP(
         type: OtpType.sms,

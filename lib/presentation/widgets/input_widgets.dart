@@ -2,7 +2,6 @@ import 'package:auto_motive/presentation/resources/size_config.dart';
 import 'package:auto_motive/presentation/resources/strings_manager.dart';
 import 'package:flutter/material.dart';
 
-import '../resources/assets_manager.dart';
 import 'custom_suffix_icon.dart';
 
 class InputFields extends StatelessWidget {

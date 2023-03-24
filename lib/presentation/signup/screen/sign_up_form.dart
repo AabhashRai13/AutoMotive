@@ -91,16 +91,16 @@ class SignUpForm extends StatelessWidget {
                 loading: loading,
                 text: AppStrings.signUp,
                 press: () {
-                  // if (formKey.currentState!.validate()) {
-                  //   context.read<SignUpBloc>().add(SignUp(
-                  //       email: emailController.text.trim(),
-                  //       password: passwordController.text.trim(),
-                  //       phone: usernameController.text.trim()));
-                  // }
-                  Navigator.pushNamed(
-                    context,
-                    Routes.addLicensePlateScreen,
-                  );
+                  if (formKey.currentState!.validate()) {
+                    context.read<SignUpBloc>().add(SignUp(
+                        email: emailController.text.trim(),
+                        password: passwordController.text.trim(),
+                        phone: usernameController.text.trim()));
+                  }
+                  // Navigator.pushNamed(
+                  //   context,
+                  //   Routes.addLicensePlateScreen,
+                  // );
                 },
               ),
             ],

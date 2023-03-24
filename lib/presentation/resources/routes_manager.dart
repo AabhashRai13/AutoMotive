@@ -3,7 +3,6 @@ import 'package:auto_motive/presentation/car_found/screens/car_found_page.dart';
 import 'package:auto_motive/presentation/home/screens/home_screen.dart';
 import 'package:auto_motive/presentation/login/screen/login_screen.dart';
 import 'package:auto_motive/presentation/onboarding/screens/background.dart';
-import 'package:auto_motive/presentation/onboarding/screens/onboarding_screen.dart';
 import 'package:auto_motive/presentation/otp_verification/screen/otp_screen.dart';
 import 'package:auto_motive/presentation/login/screen/sigin_in_with_number.dart';
 import 'package:auto_motive/presentation/signup/screen/sign_up_screen.dart';
