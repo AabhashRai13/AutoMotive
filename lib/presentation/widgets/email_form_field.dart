@@ -28,8 +28,8 @@ class EmailFormField extends StatelessWidget {
       decoration: InputDecoration(
         label: SizedBox(
           width: getProportionateScreenWidth(50),
-          child: Row(
-            children: const [
+          child:const Row(
+            children:  [
               Text(AppStrings.email),
               Text(
                 " *",

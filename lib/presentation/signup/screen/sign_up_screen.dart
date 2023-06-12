@@ -46,7 +46,7 @@ class SignUpScreen extends StatelessWidget {
                 SizedBox(height: SizeConfig.screenHeight * 0.02),
                 SignUpForm(),
                 SizedBox(height: SizeConfig.screenHeight * 0.02),
-                Row(children: const <Widget>[
+             const   Row(children:  <Widget>[
                   Expanded(child: Divider()),
                   Text(AppStrings.orSignUp),
                   Expanded(child: Divider()),

@@ -28,8 +28,8 @@ class UserNameFormField extends StatelessWidget {
       decoration: InputDecoration(
         label: SizedBox(
           width: getProportionateScreenWidth(65),
-          child: Row(
-            children: const [
+          child:const Row(
+            children:  [
               Text(AppStrings.phone),
               Text(
                 " *",
